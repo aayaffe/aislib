@@ -1,6 +1,4 @@
 import csv
-import time
-
 import serial
 
 import aislib
@@ -11,9 +9,6 @@ def decode_file_example():
     Example for decoding a file
     :return:
     """
-    # "C:\Users\root\Desktop\feed.ais.txt"
-    # with open("ais.exploratorium.edu", "r") as file:
-
     with open(r"ships20190328-095513.csv", "r") as file:
         ser = serial.Serial("COM9", 38400)
         csv_dict = csv.DictReader(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
